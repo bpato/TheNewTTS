@@ -98,7 +98,9 @@ def Init():
       "cmd_ban": "!ttsban",
       "cmd_unban": "!ttsunban",
       "moderator_permission": "Caster",
-      "cmd_skip": "!ttskip"
+      "cmd_skip": "!ttskip",
+      "quote_bot": "streamlabs",
+      "quote_prefix": "Quote #"
     }
   SETTINGS["lang"] = re.match(r"^.*\[(.+)\]", SETTINGS["lang"]).groups()[0]
   SETTINGS["pitch"] /= 100.0
