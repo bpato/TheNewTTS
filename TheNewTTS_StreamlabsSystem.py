@@ -205,9 +205,9 @@ def Execute(data):
       if SETTINGS["cooldown"] and Parent.GetCooldownDuration(ScriptName, SETTINGS["command"]):
         Parent.SendStreamMessage(SETTINGS["msg_cooldown"])
         return
-      #if not Parent.RemovePoints(data.User, data.UserName, SETTINGS["cost"]):
-      #  Parent.SendStreamMessage(SETTINGS["msg_cost"])
-      #  return
+      if not Parent.RemovePoints(data.User, data.UserName, SETTINGS["cost"]) and not SETTINGS["cost"] <= 0:
+        Parent.SendStreamMessage(SETTINGS["msg_cost"])
+        return
       if not data.GetParam(1):
         Parent.SendStreamMessage("You need to specify a message")
         return
