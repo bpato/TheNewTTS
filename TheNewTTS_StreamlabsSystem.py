@@ -141,6 +141,11 @@ def Execute(data):
   global SETTINGS, MEDIA_MGR
   if data.IsChatMessage():
     command = data.GetParam(0)
+
+    if data.User == SETTINGS["quote_bot"] and data.Message.startswith(SETTINGS["quote_prefix"]):
+      MEDIA_MGR.append(re.sub("^{0}[0-9]* ".format(SETTINGS["quote_prefix"]), "", data.Message))
+      return
+
     if Parent.HasPermission(data.User, SETTINGS["moderator_permission"], ""):
       target = data.GetParam(1)
       if command == SETTINGS["cmd_skip"]:

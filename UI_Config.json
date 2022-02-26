@@ -265,5 +265,19 @@
         "ticks": 1,
         "tooltip": "Limit the duration the TTS will be speaking.",
         "group": "TTS Configuration"
+    },
+    "quote_bot": {
+        "type": "textbox",
+        "value": "streamlabs",
+        "label": "Name bot that manage the quotes",
+        "tooltip": "",
+        "group": "Quotes Configuration"
+    },
+    "quote_prefix": {
+        "type": "textbox",
+        "value": "Quote #",
+        "label": "Quotes message prefix",
+        "tooltip": "",
+        "group": "Quotes Configuration"
     }
 }
