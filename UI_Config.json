@@ -24,6 +24,13 @@
         "wsevent": "",
         "group": ""
     },
+    "read_highlighted_text": {
+        "type": "checkbox",
+        "value": false,
+        "label": "Read highlighted chat",
+        "tooltip": "Check this to read all chat disregarding the command.\nIF YOU ARE USING THIS FEATURE MAKE SURE TO SET A FAST SPEED SO THE CHATBOT CAN KEEP UP!",
+        "group": "General"
+    },
     "read_all_text": {
         "type": "checkbox",
         "value": false,

@@ -74,6 +74,7 @@ def Init():
   except:
     SETTINGS = {
       "read_all_text": False,
+      "read_highlighted_text": False,
       "clean_repeated_words": True,
       "clean_repeated_letters": True,
       "clean_urls": True,
@@ -181,8 +182,11 @@ def Execute(data):
       text = clean_repeated_letters(text)
     if SETTINGS["clean_urls"]:
       text = clean_urls(text)
+
+    highlighted_text = SETTINGS["read_highlighted_text"] and "msg-id=highlighted-message" in data.RawData
     
-    if SETTINGS["read_all_text"]:
+    if SETTINGS["read_all_text"] or highlighted_text:
+      
       if BLACKLIST.is_user_blacklisted(data.UserName):
         return
       if text[0] == SETTINGS["ignore_starting_with"]:
